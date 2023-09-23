@@ -1,0 +1,24 @@
+.product-details {
+    justify-content: space-between;
+    padding: 50px 0 10px 0;
+
+    .product-details__img {
+        width: 40%;
+        img {
+            border-radius: 20px;
+            width: 100%;
+        }
+    }
+    .product-details__info {
+        width: 50%;
+        color: var(--primary);
+        font-size: 24px;
+
+        div {
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            outline: 1px solid var(--secondary);
+        }
+    }
+}

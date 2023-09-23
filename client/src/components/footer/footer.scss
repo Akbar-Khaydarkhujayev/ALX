@@ -1,0 +1,110 @@
+.footer-wrapper {
+    margin-top: 40px;
+    padding-top: 20px;
+    width: 100%;
+    background-color: var(--background-secondary);
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+
+    ul {
+        list-style-type: none;
+    }
+
+    .footer-room-sm {
+        width: 25%;
+    }
+
+    .footer-room-md {
+        width: 35%;
+
+        .footer__social-media {
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+
+            .footer__social-media__icon {
+                font-size: 26px;
+            }
+        }
+    }
+
+    .footer-room-lg {
+        width: 40%;
+        padding-top: 20px;
+
+        .footer__title {
+            display: inline-block;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+    }
+
+    .list__header {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 17px;
+        color: var(--secondary);
+        margin: 20px 0;
+        text-align: left;
+    }
+
+    .list__item {
+        width: max-content;
+        cursor: pointer;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 140%;
+        color: var(--primary);
+        transition: 0.3s ease-in-out;
+        margin-bottom: 15px;
+
+        &:hover {
+            color: var(--hover);
+        }
+
+        a {
+            transition: 0.2s ease-in-out;
+            text-decoration: none;
+            color: var(--primary);
+
+            &:hover {
+                color: var(--hover);
+            }
+        }
+    }
+
+    .footer__link {
+        color: var(--primary);
+        text-decoration: none;
+
+        &:hover {
+            color: var(--hover);
+        }
+    }
+}
+
+.list__copy-parent {
+    position: relative;
+
+    &:hover {
+        .list__copy {
+            display: block;
+        }
+    }
+
+    .list__copy {
+        display: none;
+        position: absolute;
+        top: -20px;
+        width: 100%;
+        height: 20px;
+        background-color: var(--hover);
+        color: white;
+        text-align: center;
+        border-radius: 10px;
+    }
+}

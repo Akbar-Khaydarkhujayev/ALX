@@ -1,0 +1,39 @@
+@use '../../styles/variables' as *;
+
+.nav-wrapper {
+  height: $nav-height;
+  width: 100%;
+}
+
+.navbar {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--background-secondary);
+
+  a {
+    cursor: pointer;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 40px;
+    padding-top: 5px;
+    transition: 1s;
+
+    &:after {
+      transition: all ease-in-out .3s;
+      background: none repeat scroll 0 0 var(--primary);
+      content: "";
+      display: block;
+      height: 2px;
+      width: 0;
+    }
+    &:hover:after {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.add-product-form {
+
+    label {
+
+        input, textarea {
+            background-color: var(--background-secondary);
+        }
+
+        .add-product-form__description {
+            resize: none;
+            height: 100px;
+            border: 1px solid var(--primary);
+
+            &:focus {
+                border: 2px solid var(--accent);
+            }
+        }
+
+        .add-product-form__price {
+            margin-right: 10px;
+        }
+    }
+}

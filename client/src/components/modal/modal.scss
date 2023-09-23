@@ -1,0 +1,56 @@
+@use "sass:color";
+
+.modal-overlay {
+    z-index: -99;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: color-mix(in srgb, var(--primary) 90%, transparent);
+    transition: .4s;
+}
+
+.modal-overlay.show {
+    opacity: 100%;
+    z-index: 98;
+
+    .modal {
+        opacity: 100%;
+        top: 40%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.modal {
+    width: 40%;
+    background-color: var(--background-secondary);
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: .4s;
+    border-radius: 20px;
+    color: var(--primary);
+
+    .modal__header {
+        padding: 10px 25px;
+        display: flex;
+        justify-content: space-between;
+        line-height: 30px;
+        border-bottom: 1px solid var(--primary);
+        font-size: 20px;
+
+        svg {
+            font-size: 30px;
+            cursor: pointer;
+
+            &:hover {
+                color: var(--hover);
+            }
+        }
+    }
+}
