@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="790f4e2a-a350-4b19-bd4f-ad999f70dfb4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +47,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/AKBAR/OneDrive/Рабочий стол/ALX",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -60,6 +60,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\AKBAR\OneDrive\Рабочий стол\ALX" />
       <recent name="C:\Users\AKBAR\OneDrive\Рабочий стол\ALX\client\src\pages\auth" />
       <recent name="C:\Users\AKBAR\OneDrive\Рабочий стол\ALX\client\src\pages\login" />
     </key>
@@ -75,7 +76,7 @@
       <workItem from="1694755312087" duration="19250000" />
       <workItem from="1694848800847" duration="9521000" />
       <workItem from="1695026809524" duration="5996000" />
-      <workItem from="1695271886553" duration="41070000" />
+      <workItem from="1695271886553" duration="41511000" />
     </task>
     <servers />
   </component>
