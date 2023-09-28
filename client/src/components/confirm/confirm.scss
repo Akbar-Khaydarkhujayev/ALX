@@ -1,3 +1,5 @@
+@use '../../styles/variables' as *;
+
 .confirm-overlay {
     z-index: 99;
     position: fixed;
@@ -11,7 +13,7 @@
 
     .confirm {
         padding: 20px;
-        width: 25%;
+        width: 30%;
         background-color: var(--background-secondary);
         position: fixed;
         left: 50%;
@@ -55,6 +57,41 @@
         .confirm__btn-accept {
             background-color: var(--hover);
             box-shadow: 0 0 10px 0 rgb(229 53 30 / 50%);
+        }
+    }
+}
+
+//Responsiveness
+
+@include laptop {
+    .confirm-overlay {
+        .confirm {
+            width: 40%;
+        }
+
+    }
+}
+
+@include tablet {
+    .confirm-overlay {
+        .confirm {
+            width: 45%;
+        }
+    }
+}
+
+@include mobile {
+    .confirm-overlay {
+        .confirm {
+            width: 60%;
+        }
+    }
+}
+
+@include mobile-sm {
+    .confirm-overlay {
+        .confirm {
+            width: 80%;
         }
     }
 }

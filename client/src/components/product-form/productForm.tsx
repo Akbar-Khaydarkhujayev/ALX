@@ -14,7 +14,7 @@ const ProductForm = () => {
     const [error, setError] = useState('');
 
     const {openModal, setEdit, edit, modal} = useModal();
-    console.log(edit)
+
     const {token} = useAuth();
 
     const {
@@ -32,7 +32,7 @@ const ProductForm = () => {
     }, [modal]);
 
     const onSubmit = async (product: IProduct) => {
-        if(token == '') {
+        if (token == '') {
             setError('You must log in first')
             return
         }
@@ -142,6 +142,8 @@ const ProductForm = () => {
                         name="category"
                         control={control}
                         render={({field}) => (
+                            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                            // @ts-ignore
                             <Select
                                 {...field}
                                 options={options}

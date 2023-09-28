@@ -8,6 +8,8 @@ const userRoutes = require('./routes/user')
 
 const app = express()
 
+app.use(express.static('dist'))
+
 app.use(express.json());
 
 app.get('/api', (req, res) => {

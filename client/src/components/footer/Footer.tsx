@@ -1,13 +1,18 @@
 import {useState} from 'react';
 import {Link} from "react-router-dom";
-import './footer.scss';
 import {AiOutlineInstagram, AiFillGithub} from 'react-icons/ai';
 import {LiaTelegram} from 'react-icons/lia';
+import ConfirmLogOut from "../confirm/ConfirmLogOut.tsx";
+import {useModal} from "../../context/modal/ModalContext.tsx";
+import './footer.scss';
 
 const Footer = () => {
 
+    const {openModal} = useModal()
+
     const [copyPhone, setCopyPhone] = useState<boolean>(false);
     const [copyMail, setCopyMail] = useState<boolean>(false);
+    const [confirmLogOut, setConfirmLogOut] = useState(false);
 
     const handleCopy = (mail: boolean) => {
         if(mail) {
@@ -23,8 +28,14 @@ const Footer = () => {
         },3000);
     }
 
+    const handleOpenModal = () => {
+        openModal(true)
+        document.body.classList.add('overflow-y-hidden')
+    }
+
     return (
         <div className='footer-wrapper'>
+            {confirmLogOut ? <ConfirmLogOut text='Log out' setConfirmLogOut={setConfirmLogOut}/> : null}
             <div className="container">
                 <div className="footer">
                     <div className="footer-room-lg">
@@ -32,26 +43,32 @@ const Footer = () => {
                             <p>Akbar</p>
                             <p>Line Exchange</p>
                         </Link>
+                        <ul>
+                            <li className="list__header header__margin-top">Contacts</li>
+                            <li className="list__item list__copy-parent" onClick={() => handleCopy(false)}>
+                                +998 99 830 30 17
+                                <div className='list__copy'>{copyPhone ? "Copied" : "Tap to Copy"}</div>
+                            </li>
+                            <li className="list__item list__copy-parent" onClick={() => handleCopy(true)}>
+                                akbarboss91@gmail.com
+                                <div className='list__copy'>{copyMail ? "Copied" : "Tap to Copy"}</div>
+                            </li>
+                        </ul>
                     </div>
                     <div className="footer-room-sm">
                         <ul>
-                            <li className="list__header">Categories</li>
-                            <li className="list__item">Men's clothing</li>
-                            <li className="list__item">Women's clothing</li>
-                            <li className="list__item">Electronics</li>
-                            <li className="list__item">Jewelery</li>
+                            <li className="list__header">Navigation</li>
+                            <Link to='/'>
+                                <li className="list__item">All products</li>
+                            </Link>
+                            <Link to='/myproducts'>
+                                <li className="list__item">My products</li>
+                            </Link>
+                                <li className="list__item" onClick={handleOpenModal}>Create Product</li>
                         </ul>
                         <ul>
                             <li className="list__header">More</li>
-                            <Link to="/Cart" className="footer__link">
-                                <li className="list__item">Go to Cart</li>
-                            </Link>
-                            <Link to="/Login" className="footer__link">
-                                <li className="list__item">Sign In</li>
-                            </Link>
-                            <Link to="/Registration" className="footer__link">
-                                <li className="list__item">Sign Up</li>
-                            </Link>
+                                <li className="list__item" onClick={() => setConfirmLogOut(true)}>Log out</li>
                         </ul>
                     </div>
                     <div className="footer-room-md">
@@ -72,7 +89,7 @@ const Footer = () => {
                                     href="https://draggable-todolist-react-app.herokuapp.com/"
                                     target="_blank"
                                 >
-                                    To Do List with Draggable Elements on React
+                                    Draggable To Do List
                                 </a>
                             </li>
                             <li className="list__item">
@@ -90,17 +107,6 @@ const Footer = () => {
                                 >
                                     Snake Game on Pure Js
                                 </a>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li className="list__header">Contacts</li>
-                            <li className="list__item list__copy-parent" onClick={() => handleCopy(false)}>
-                                +998 99 830 30 17
-                                <div className='list__copy'>{copyPhone ? "Copied" : "Tap to Copy"}</div>
-                            </li>
-                            <li className="list__item list__copy-parent" onClick={() => handleCopy(true)}>
-                                akbarboss91@gmail.com
-                                <div className='list__copy'>{copyMail ? "Copied" : "Tap to Copy"}</div>
                             </li>
                         </ul>
                         <ul className="footer__social-media">

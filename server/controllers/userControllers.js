@@ -1,5 +1,6 @@
-const User = require('../models/userModel')
 const jwt = require('jsonwebtoken')
+const mongoose = require("mongoose")
+const User = require('../models/userModel')
 
 
 const createToken = (id) => {
@@ -36,4 +37,21 @@ const loginUser = async (req, res) => {
     }
 }
 
-module.exports = {registerUser, loginUser}
+//GetUserInfo
+const getUser = async (req, res) => {
+    const { id } = req.params
+
+    if(!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({error: "Invalid ID"})
+    }
+
+    const user = await User.findById(id).select('firstName phone email')
+
+    if(!user) {
+        return res.status(404).json({error: "No such User"})
+    }
+
+    res.status(200).json(user)
+}
+
+module.exports = {registerUser, loginUser, getUser}

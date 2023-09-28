@@ -1,15 +1,20 @@
 import {useEffect, useState} from 'react';
-import {IProduct} from "../../interfaces/IProduct";
+//Components
+import Navbar from "../../components/navbar/Navbar.tsx";
+import Footer from "../../components/footer/Footer.tsx";
+import Product from "../../components/product/Product.tsx";
 import ProductForm from "../../components/product-form/productForm";
+//Context
 import {useModal} from "../../context/modal/ModalContext";
 import {useTheme} from '../../context/theme/ThemeContext';
 import {useAuth} from '../../context/auth/AuthContext.tsx';
+//Interfaces
+import {IProduct} from "../../interfaces/IProduct";
+//Images
 import darkBanner from '../../assets/banner-dark.png';
 import lightBanner from '../../assets/banner-light.png';
+//Styles
 import './home.scss';
-import Navbar from "../../components/navbar/Navbar.tsx";
-import Footer from "../../components/footer/Footer.tsx";
-import MyProduct from "../../components/product/MyProduct.tsx";
 
 const Home = () => {
 
@@ -53,7 +58,7 @@ const Home = () => {
                 <div className='container'>
                     <div className='grid'>
                         {products && products.map((product) =>
-                            <MyProduct key={product._id} product={product}/>
+                            <Product key={product._id} product={product}/>
                         )}
                     </div>
                 </div>

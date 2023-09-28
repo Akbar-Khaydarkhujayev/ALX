@@ -1,15 +1,18 @@
 import {useEffect, useState} from 'react';
-import Product from "../../components/product/Product";
-import {IProduct} from "../../interfaces/IProduct";
+//Components
+import MyProduct from "../../components/product/MyProduct.tsx";
 import ProductForm from "../../components/product-form/productForm";
+import Navbar from "../../components/navbar/Navbar.tsx";
+import Footer from "../../components/footer/Footer.tsx";
+//Context
 import {useModal} from "../../context/modal/ModalContext";
 import {useTheme} from '../../context/theme/ThemeContext';
 import {useAuth} from '../../context/auth/AuthContext.tsx';
+import {IProduct} from "../../interfaces/IProduct";
 import darkBanner from '../../assets/banner-dark.png';
 import lightBanner from '../../assets/banner-light.png';
+//Styles
 import '../home/home.scss';
-import Navbar from "../../components/navbar/Navbar.tsx";
-import Footer from "../../components/footer/Footer.tsx";
 
 const MyProducts = () => {
 
@@ -48,12 +51,12 @@ const MyProducts = () => {
                 </div>
                 <ProductForm></ProductForm>
                 <div className='main__title'>
-                    {products.length ? 'All Products' : 'No Products'}
+                    {products.length ? 'All Products' : 'You do not have Products'}
                 </div>
                 <div className='container'>
                     <div className='grid'>
                         {products && products.map((product) =>
-                            <Product key={product._id} product={product} setDeleted={setDeleted}/>
+                            <MyProduct key={product._id} product={product} setDeleted={setDeleted}/>
                         )}
                     </div>
                 </div>

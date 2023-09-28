@@ -1,25 +1,28 @@
+@use '../../styles/variables' as *;
+
 .footer-wrapper {
     margin-top: 40px;
-    padding-top: 20px;
+    padding: 40px 0;
     width: 100%;
     background-color: var(--background-secondary);
 }
 
 .footer {
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: 40% 35% 25%;
 
     ul {
         list-style-type: none;
     }
 
     .footer-room-sm {
-        width: 25%;
+        a {
+            text-decoration: none;
+        }
     }
 
     .footer-room-md {
-        width: 35%;
-
         .footer__social-media {
             width: 50%;
             display: flex;
@@ -32,8 +35,7 @@
     }
 
     .footer-room-lg {
-        width: 40%;
-        padding-top: 20px;
+        padding-top: 30px;
 
         .footer__title {
             display: inline-block;
@@ -68,8 +70,8 @@
 
         a {
             transition: 0.2s ease-in-out;
-            text-decoration: none;
             color: var(--primary);
+            text-decoration: none;
 
             &:hover {
                 color: var(--hover);
@@ -106,5 +108,64 @@
         color: white;
         text-align: center;
         border-radius: 10px;
+    }
+}
+
+//Responsiveness
+
+@include laptop {
+
+}
+
+@include tablet {
+
+}
+
+@include mobile {
+    .footer {
+        grid-template-columns: 1fr 1fr;
+
+        .footer-room-lg {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            .header__margin-top {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+@include mobile-sm {
+    .footer {
+        display: block;
+        text-align: center;
+
+        text-align: center;
+    }
+
+    .footer-room-lg {
+        display: block !important;
+        text-align: center;
+
+        .header__margin-top {
+            margin-top: 20px;
+        }
+    }
+
+    .list__header {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .list__item {
+        width: 100% !important;
+        text-align: center;
+    }
+
+    .footer__social-media {
+        margin: 0 auto;
     }
 }

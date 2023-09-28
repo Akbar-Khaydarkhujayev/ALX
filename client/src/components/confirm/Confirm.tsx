@@ -1,8 +1,8 @@
 import {Dispatch, SetStateAction, useCallback, useEffect} from 'react';
-import './confirm.scss'
 import {useModal} from "../../context/modal/ModalContext";
-import {defaultProductValue} from "../../interfaces/IProduct";
 import {useAuth} from "../../context/auth/AuthContext.tsx";
+import {defaultProductValue} from "../../interfaces/IProduct";
+import './confirm.scss'
 
 interface IProps {
     text: string
@@ -51,13 +51,10 @@ const Confirm = ({text, setConfirm, setDeleted, id} : IProps) => {
             }
         })
 
-        const json = await response.json();
 
+        const json = await response.json();
         if (response.ok) {
-            console.log(json);
-            if(setDeleted) {
-                setDeleted(true);
-            }
+            setDeleted && setDeleted(true)
         } else {
             console.log(json.error);
         }

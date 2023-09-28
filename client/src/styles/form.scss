@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .form {
     width: 50%;
     display: flex;
@@ -60,5 +62,31 @@
 
     .css-b62m3t-container {
         color: black;
+    }
+}
+
+//Responsiveness
+
+@include laptop {
+    .form {
+        width: 60%;
+    }
+}
+
+@include tablet {
+    .form {
+        width: 70%;
+    }
+}
+
+@include mobile {
+    .form {
+        width: 80%;
+    }
+}
+
+@include mobile-sm {
+    .form {
+        width: 80%;
     }
 }

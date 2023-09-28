@@ -23,10 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-.iml
-gradle.xml
-.idea/libraries
-
 # Server folder
 server/node_modules
 server/.env

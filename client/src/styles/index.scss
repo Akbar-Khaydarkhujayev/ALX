@@ -16,10 +16,6 @@
   display: flex;
 }
 
-.space-around {
-  justify-content: space-around;
-}
-
 .space-between {
   justify-content: space-between;
 }
@@ -45,4 +41,35 @@
   grid-auto-rows: minmax(0, auto);
   grid-auto-columns: 100%;
   justify-content: stretch;
+}
+
+//Responsiveness
+
+@include laptop {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@include tablet {
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@include mobile {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .container {
+    width: 90%;
+  }
+}
+
+@include mobile-sm {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }

@@ -10,6 +10,21 @@ export interface IRegister {
     updatedAt?: string;
 }
 
+export interface getUserData {
+    _id: string;
+    firstName: string;
+    phone: number;
+    email: string;
+}
+
+
+export const defaultUserData = {
+    _id: '',
+    firstName: '',
+    phone: 0,
+    email: '',
+}
+
 export interface ILogin {
     _id?: string;
     email: string;

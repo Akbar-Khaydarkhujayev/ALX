@@ -1,4 +1,5 @@
 @use "sass:color";
+@use '../../styles/variables' as *;
 
 .modal-overlay {
     z-index: -99;
@@ -52,5 +53,31 @@
                 color: var(--hover);
             }
         }
+    }
+}
+
+//Responsiveness
+
+@include laptop {
+    .modal {
+        width: 45%;
+    }
+}
+
+@include tablet {
+    .modal {
+        width: 55%;
+    }
+}
+
+@include mobile {
+    .modal {
+        width: 60%;
+    }
+}
+
+@include mobile-sm {
+    .modal {
+        width: 70%;
     }
 }
